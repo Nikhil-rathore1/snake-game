@@ -15,13 +15,79 @@ h1 {
 }
 
 .score {
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Adjusted margin */
   font-size: 1.2em;
   color: #555;
+}
+
+#gameContainer {
+  position: relative; /* Needed for overlay positioning */
+  width: 400px;
+  height: 400px;
+  margin-bottom: 15px; /* Add space below canvas */
 }
 
 #gameCanvas {
   border: 1px solid #ccc;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: block; /* Remove extra space below canvas */
+}
+
+#startScreen, #pauseOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#pauseOverlay h2 {
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.controls button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.controls button:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+#startButton, #resumeButton {
+   padding: 15px 30px;
+   font-size: 1.2em;
+   cursor: pointer;
+   border: none;
+   border-radius: 5px;
+   background-color: #007bff;
+   color: white;
+   transition: background-color 0.3s ease;
+}
+
+#startButton:hover, #resumeButton:hover {
+  background-color: #0056b3;
 }
